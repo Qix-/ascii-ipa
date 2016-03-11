@@ -6,8 +6,6 @@ from __future__ import division, print_function
 import re
 
 PHONEMIC_RE = re.compile(r'/[^/]+/')
-PHONETIC_RE = re.compile(r'\[[^\]+\]')
-
 
 def _sort(it):
   """Sort by reverse-length, then alphabetically"""
