@@ -1,5 +1,22 @@
 # Kirshenbaum ASCII-IPA to Unicode translator
 
+Forked from https://github.com/coruus/ascii-ipa
+
+Reads from STDIN and writes to STDOUT when run directly with:
+
+```
+python kirshenbaum.py
+```
+
+You can pipe in and write out
+
+```
+python kirshenbaum.py < kirshenbaum.txt > ipa.txt
+```
+
+Default is a Kirshenbaum -> IPA conversion, but it can easily do conversion both
+ways, just edit the main function
+
 An inefficient and ugly Python translator from the `sci.lang` and
 `alt.usage.english` ASCII IPA format (as standardized by Evan
 Kirshenbaum) and Unicode IPA glyphs.
