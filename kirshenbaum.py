@@ -4,6 +4,7 @@
 from __future__ import division, print_function
 
 import re
+import sys
 
 PHONEMIC_RE = re.compile(r'/[^/]+/')
 
@@ -200,7 +201,7 @@ def _ascii_to_unicode(s):
       s = s[1:]
     lasts = s
 
-    if s[0] in STRESS:
+    if s and s[0] in STRESS:
       t += STRESS[s[0]]
       s = s[1:]
 
@@ -252,16 +253,9 @@ def _unicode_to_ascii(s):
   return t
 
 
-# TODO: test cases
-# phrase = u'''
-# ai hir D@ 'sEkrI,t&ri
-# aI hi@ DI 'sEkrVtri
-# t<h>&:g<o>
-# t!
-# R<umd>
-# '''
-
-# ipa = u'''ˈeːɪjaˌfjatl̥aˌjœːkʏtl̥''
-# hɔrs hoʊrs
-# hɔrs
-# '''
+if __name__ == "__main__":
+    line = sys.stdin.readline()
+    while line:
+	line = unicode(line, 'utf-8').strip()
+	print(_ascii_to_unicode(line).encode("utf-8"))
+        line = sys.stdin.readline()
